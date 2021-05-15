@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SignUp and Login</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="container" id="container">
+
+<div class="form-container sign-in-container">
+
+<form action="register" method="post">
+	{% csrf_token %}
+
+	<h1>Create Account</h1>
+	
+	
+	<input type="text" name="username" placeholder="Username">
+	<input type="email" name="email" placeholder="Email">
+    <input type="password" name="password1" placeholder="Password">
+    <input type="password" name="password2" placeholder="Confirm Password">
+	<input type="submit">
+</form>
+</div>
+
+</div>
+ <div>
+            {% for message in messages %}
+            <h3> {{message}}  </h3>
+            {% endfor %}
+</div>
+
+
+
+</body>
+</html>
